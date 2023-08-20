@@ -1,9 +1,10 @@
 .todo-item-wrapper{
-    width: 400px;
-    height: 575px;
+    width: 350px;
+    height: 560px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     margin-left: 15px;
     margin-top: 20px;
+    border-radius: 5px;
 }
 .card-header-img{
     width: 100%;

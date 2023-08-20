@@ -1,29 +1,58 @@
 import React from 'react'
 import './css/Create-from.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios  from 'axios'
 import {useNavigate,useParams} from "react-router-dom";
+import Swal from "sweetalert2"
 
 function CreateForm() {
-       
+  let navigate =useNavigate();
+  let {id} = useParams();
   let [FormValue,SetFormValue] = useState({Img:"",ProductCode:"",ProductName:"",Qty:"",TotalPrice:"",UnitPrice:""});
+  
+  
 
+  //Data fecth by id and show form.....
+  useEffect(()=>{
+
+    (async ()=>{
+       let res=await axios.get("https://crud.teamrabbil.com/api/v1/ReadProductByID/"+id);
+       SetFormValue(res.data['data'][0]);
+        setIsProduct(true);
+    })()
+
+},[])
+
+
+
+//Set data state using Form...
 
   const InputOnChange = (property,value) => {
     SetFormValue({...FormValue,[property]:value});
   }
 
 
+
+//conditionally Create and Update when clicked button ...
+
   const onSubmit = async () => {
-    let URL="https://crud.teamrabbil.com/api/v1/CreateProduct"
-   
+    let URL="https://crud.teamrabbil.com/api/v1/CreateProduct" 
+      if(id){
+        URL="https://crud.teamrabbil.com/api/v1/UpdateProduct/"+id;
         let res= await axios.post(URL, FormValue);
-        if(res.status===200){
-               alert("update successfully");
+           if(res.status===200){
+              Swal.fire("Update sucessfully");
                navigate('/');
             }
+      }else{
+        let res= await axios.post(URL, FormValue);
+        if(res.status===200){
+          
+          Swal.fire("Create Successfully");
+          navigate('/')
         }
-     
+      }
+   }
      
 
 

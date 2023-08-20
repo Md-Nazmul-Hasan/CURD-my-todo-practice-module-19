@@ -1,0 +1,55 @@
+.Home-section{
+    margin-top: 30px;
+}
+
+.dual-last-img{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.offer-bar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-one{
+    width: 45%;
+    height: auto;
+}
+
+.section-one img{
+    width: 100%;
+    height: auto;
+}
+
+.section-two{
+    width: 45%;
+    height: auto;
+}
+
+.section-two img{
+    width: 100%;
+    height: auto;
+}
+
+
+.brand-name{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-name img{
+    width: 100%;
+}
+.footer-wrapper{
+    margin-top: 50px;
+}

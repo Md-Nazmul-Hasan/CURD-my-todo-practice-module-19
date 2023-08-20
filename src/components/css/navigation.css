@@ -1,0 +1,14 @@
+
+.navigation-wrapper ul li:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: 0.8s;
+    color: rgb(241, 18, 2);
+}
+
+.navigation-wrapper ul li NavLink:hover{
+    cursor: pointer;
+    scale: 1.1;
+    transition: 0.8s;
+    color: red;
+}
